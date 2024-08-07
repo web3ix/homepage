@@ -38,7 +38,7 @@ export const Hubspot = ({ form, children }) => {
 
   const { errors, isSubmitting, isValid } = formState
   const [IP, setIP] = useState('')
-  const url = `https://api.hsforms.com/submissions/v3/integration/submit/${form.portalId}/${form.id}`
+  const url = `https://api.hsforms.com/submissions/v3/integration/submit/${form?.portalId}/${form?.id}`
   const formFields = form.inputs.map((field) => field.name)
 
   async function fetchIP() {

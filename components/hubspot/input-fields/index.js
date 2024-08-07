@@ -18,7 +18,7 @@ const InputField = forwardRef(
       onBlur,
       required,
     },
-    ref
+    ref,
   ) => {
     return (
       <div className={s.wrapper} ref={ref}>
@@ -53,7 +53,7 @@ const InputField = forwardRef(
         )}
       </div>
     )
-  }
+  },
 )
 
 const TextArea = forwardRef(
@@ -70,7 +70,7 @@ const TextArea = forwardRef(
       onBlur,
       required,
     },
-    ref
+    ref,
   ) => {
     return (
       <div className={s.wrapper} ref={ref}>
@@ -103,7 +103,7 @@ const TextArea = forwardRef(
         )}
       </div>
     )
-  }
+  },
 )
 
 const MultipleCheckboxField = forwardRef(
@@ -134,7 +134,7 @@ const MultipleCheckboxField = forwardRef(
         ))}
       </div>
     )
-  }
+  },
 )
 
 const SelectField = forwardRef(
@@ -148,7 +148,7 @@ const SelectField = forwardRef(
       onChange = () => {},
       onBlur = () => {},
     },
-    ref
+    ref,
   ) => {
     return (
       <div className={s.wrapper} ref={ref}>
@@ -176,7 +176,7 @@ const SelectField = forwardRef(
         </Select>
       </div>
     )
-  }
+  },
 )
 
 InputField.displayName = 'InputField'
@@ -184,4 +184,4 @@ TextArea.displayName = 'TextArea'
 MultipleCheckboxField.displayName = 'MultipleCheckboxField'
 SelectField.displayName = 'SelectField'
 
-export { InputField, TextArea, MultipleCheckboxField, SelectField }
+export { InputField, MultipleCheckboxField, SelectField, TextArea }

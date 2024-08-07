@@ -1,4 +1,4 @@
-import { Link, Marquee } from '@studio-freight/compono'
+import { Marquee } from '@studio-freight/compono'
 import { useMediaQuery } from '@studio-freight/hamo'
 import va from '@vercel/analytics'
 import cn from 'clsx'
@@ -9,16 +9,17 @@ import { useStore } from 'lib/store'
 import dynamic from 'next/dynamic'
 import s from './header.module.scss'
 
-const SFLogo = dynamic(() => import('icons/sf-logo.svg'), { ssr: false })
-const SFLogoMobile = dynamic(() => import('icons/sf-logo-mobile.svg'), {
+const Web3ixLogo = dynamic(() => import('icons/web3ix-logo.svg'), {
   ssr: false,
 })
-const SFDR = dynamic(() => import('icons/sfdr.svg'), { ssr: false })
-const Stard = dynamic(() => import('icons/stard.svg'), { ssr: false })
-const Monogram = dynamic(() => import('icons/sf-monogram.svg'), { ssr: false })
-const StarDuotone = dynamic(() => import('icons/star-duotone.svg'), {
+const Web3ixLogoMobile = dynamic(() => import('icons/web3ix-logo-mobile.svg'), {
   ssr: false,
 })
+// const Stard = dynamic(() => import('icons/stard.svg'), { ssr: false })
+// const Monogram = dynamic(() => import('icons/sf-monogram.svg'), { ssr: false })
+// const StarDuotone = dynamic(() => import('icons/star-duotone.svg'), {
+//   ssr: false,
+// })
 
 export const Header = ({ principles = [], contact }) => {
   const isMobile = useMediaQuery('(max-width: 800px)')
@@ -32,7 +33,8 @@ export const Header = ({ principles = [], contact }) => {
   return (
     <header className={cn(s.container, 'layout-block')}>
       <div className={cn(s.top, 'layout-grid')}>
-        <div className={s.eggs}>
+        {/* TODO */}
+        {/* <div className={s.eggs}>
           <Link
             name="easter egg"
             className={s.egg}
@@ -61,7 +63,7 @@ export const Header = ({ principles = [], contact }) => {
           >
             <StarDuotone />
           </Link>
-        </div>
+        </div> */}
         {isMobile === false && (
           <Marquee className={s.marquee} duration={20}>
             {principles.map((principle, i) => (
@@ -86,9 +88,9 @@ export const Header = ({ principles = [], contact }) => {
       <Separator />
       <div className={cn(s.header, 'layout-grid')}>
         {isMobile === true ? (
-          <SFLogoMobile className={s.title} />
+          <Web3ixLogoMobile className={s.title} />
         ) : (
-          <SFLogo className={s.title} />
+          <Web3ixLogo className={s.title} />
         )}
       </div>
       <Separator />

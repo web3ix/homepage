@@ -11,7 +11,7 @@ import {
   contactEntryQuery,
   footerEntryQuery,
   projectListEntryQuery,
-  studioFreightEntryQuery,
+  rootEntryQuery,
 } from 'contentful/queries/home.graphql'
 import { renderer } from 'contentful/renderer'
 import { Layout } from 'layouts/default'
@@ -32,7 +32,7 @@ const Gallery = dynamic(
   },
 )
 
-export default function Home({ studioFreight, footer, contact, projects }) {
+export default function Home({ rootEntry, footer, contact, projects }) {
   const router = useRouter()
 
   const [showInfoModal, setShowInfoModal] = useState(false)
@@ -42,6 +42,7 @@ export default function Home({ studioFreight, footer, contact, projects }) {
     state.selectedProject,
     state.setSelectedProject,
   ])
+
   const [setGalleryVisible] = useStore((state) => [state.setGalleryVisible])
 
   useEffect(() => {
@@ -66,16 +67,16 @@ export default function Home({ studioFreight, footer, contact, projects }) {
   return (
     <Layout
       theme="dark"
-      principles={studioFreight.principles}
+      principles={rootEntry.principles}
       studioInfo={{
-        phone: studioFreight.phoneNumber,
-        email: studioFreight.email,
+        phone: rootEntry.phoneNumber,
+        email: rootEntry.email,
       }}
       contactData={contact}
       footerLinks={footer.linksCollection.items}
     >
       {!isDesktop ? (
-        <LayoutMobile studioFreight={studioFreight} projects={projects} />
+        <LayoutMobile rootEntry={rootEntry} projects={projects} />
       ) : (
         <ClientOnly>
           <div className={cn(s.content, 'layout-grid')}>
@@ -86,7 +87,7 @@ export default function Home({ studioFreight, footer, contact, projects }) {
                 About
               </p>
               <ScrollableBox className={s.description}>
-                {renderer(studioFreight.about)}
+                {renderer(rootEntry.about)}
               </ScrollableBox>
             </section>
             <section className={s.projects}>
@@ -210,9 +211,9 @@ export default function Home({ studioFreight, footer, contact, projects }) {
                   reset={!showInfoModal || resetScroll}
                 >
                   {selectedProject.description && (
-                    <p className={cn(s.description, 'p')}>
-                      {selectedProject.description}
-                    </p>
+                    <div className={cn(s.description, 'p')}>
+                      {renderer(selectedProject.description)}
+                    </div>
                   )}
                   {selectedProject.testimonial && (
                     <div className={s.testimonial}>
@@ -278,9 +279,9 @@ export default function Home({ studioFreight, footer, contact, projects }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const [{ studioFreight }, { footer }, { contact }, { projectList }] =
+  const [{ rootEntry }, { footer }, { contact }, { projectCollection }] =
     await Promise.all([
-      fetchCmsQuery(studioFreightEntryQuery, {
+      fetchCmsQuery(rootEntryQuery, {
         preview,
       }),
       fetchCmsQuery(footerEntryQuery, {
@@ -298,10 +299,10 @@ export async function getStaticProps({ preview = false }) {
 
   return {
     props: {
-      studioFreight,
+      rootEntry,
       footer,
       contact,
-      projects: projectList.listCollection,
+      projects: projectCollection,
       id: 'home',
     },
     revalidate: 30,

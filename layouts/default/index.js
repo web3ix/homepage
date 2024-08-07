@@ -1,46 +1,39 @@
-import { Cursor, CustomHead, Scrollbar } from '@studio-freight/compono'
+import { Cursor, Scrollbar } from '@studio-freight/compono'
 import { useDebug } from '@studio-freight/hamo'
 import cn from 'clsx'
+import { CustomHead } from 'components/custom-head'
 import { Footer } from 'components/footer'
 import { Header } from 'components/header'
 import dynamic from 'next/dynamic'
+
 import s from './layout.module.scss'
 
 const Orchestra = dynamic(
   () => import('lib/orchestra').then(({ Orchestra }) => Orchestra),
-  { ssr: false }
+  { ssr: false },
 )
 
 export function Layout({
   seo = {
-    title: 'Studio Freight - Built on Principle',
-    description:
-      'Studio Freight is an independent creative studio built on principle.',
-    image: { url: 'https://studiofreight.com/sf-og.jpg' },
+    title: 'Web3ix Labs - Build on Principle',
+    description: 'Web3ix is an independent blockchain lab built on principle.',
+    image: { url: 'https://web3ix.com/sf-og.jpg' },
     keywords: [
-      'freight',
-      'studio',
-      'UX',
-      'UI',
-      'userexperience',
-      'webdesign',
-      'webdeveloper',
-      'design',
-      'codedesign',
+      'web3ix',
+      'blockchain',
+      'web3',
+      'dapps',
+      'defi',
+      'decentralized',
       'code',
       'hashtag',
       'development',
       'website',
       'websitedevelopment',
       'webservices',
-      'art direction',
       'strategy',
       'web',
-      'murals',
-      'illustration',
-      'photography',
-      'signage',
-      'video',
+      'bot',
     ],
   },
   children,
@@ -56,15 +49,23 @@ export function Layout({
   return (
     <>
       <CustomHead {...seo} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'Web3ix Labs',
+            alternateName: ['Web3ix'],
+            url: 'https://web3ix.com/',
+          }),
+        }}
+      />
 
       <div className={cn(`theme-${theme}`, s.layout, className)}>
         <Cursor />
         <Scrollbar />
-        <Header
-          
-          principles={principles}
-          contact={contactData}
-        />
+        <Header principles={principles} contact={contactData} />
         <main className={s.main}>{children}</main>
         <Footer links={footerLinks} studioInfo={studioInfo} />
       </div>

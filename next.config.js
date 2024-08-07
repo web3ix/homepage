@@ -1,4 +1,4 @@
-const withPWA = require('@ducanh2912/next-pwa').default({
+const withPWA = require('next-pwa')({
   dest: 'public',
 })
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
@@ -27,10 +27,6 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'images.ctfassets.net',
-      },
-      {
-        protocol: 'https',
-        hostname: 'assets.studiofreight.com',
       },
     ],
     formats: ['image/avif', 'image/webp'],

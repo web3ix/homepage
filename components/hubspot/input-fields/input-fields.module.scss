@@ -96,7 +96,7 @@
       grid-column: span 1;
     }
     &:nth-child(8) {
-      grid-column: span 1;
+      // grid-column: span 1;
     }
     &:nth-child(9) {
       grid-column: span 1;
@@ -187,7 +187,9 @@
       padding: mobile-vw(15px) mobile-vw(16px);
       border-radius: mobile-vw(24px);
       border: 1px solid;
-      transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+      transition:
+        color 200ms ease-in-out,
+        background-color 200ms ease-in-out;
 
       @include desktop {
         padding: desktop-vw(15px) desktop-vw(16px);

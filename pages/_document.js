@@ -7,42 +7,42 @@ export default function Document() {
       <Head>
         <meta charSet="UTF-8" />
         <link
-          href="/fonts/GTAlpina-ThIt.woff2"
+          href="https://web3ix.com/fonts/GTAlpina-ThIt.woff2"
           as="font"
           rel="preload prefetch"
           type="font/woff2"
           crossOrigin="anonymous"
         />
         <link
-          href="/fonts/MessinaSansMono-Regular.woff2"
+          href="https://web3ix.com/fonts/MessinaSansMono-Regular.woff2"
           as="font"
           rel="preload prefetch"
           type="font/woff2"
           crossOrigin="anonymous"
         />
         <link
-          href="/fonts/MessinaSansMono-SemiBold.woff2"
+          href="https://web3ix.com/fonts/MessinaSansMono-SemiBold.woff2"
           as="font"
           rel="preload prefetch"
           type="font/woff2"
           crossOrigin="anonymous"
         />
         <link
-          href="/fonts/NeueMontreal-Bold.woff2"
+          href="https://web3ix.com/fonts/NeueMontreal-Bold.woff2"
           as="font"
           rel="preload prefetch"
           type="font/woff2"
           crossOrigin="anonymous"
         />
         <link
-          href="/fonts/NeueMontreal-Light.woff2"
+          href="https://web3ix.com/fonts/NeueMontreal-Light.woff2"
           as="font"
           rel="preload prefetch"
           type="font/woff2"
           crossOrigin="anonymous"
         />
         <link
-          href="/fonts/NeueMontreal-Regular.woff2"
+          href="https://web3ix.com/fonts/NeueMontreal-Regular.woff2"
           as="font"
           rel="preload prefetch"
           type="font/woff2"

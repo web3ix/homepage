@@ -35,12 +35,12 @@ if (typeof window !== 'undefined') {
 
   window.CREDIT_ME = {
     id: location.hostname,
-    url: 'https://studiofreight.com',
+    url: 'https://web3ix.com',
     credits: [
       {
-        name: 'Studio Freight',
-        email: 'hello@studiofreight.com',
-        website: 'https://studiofreight.com',
+        name: 'Web3ix',
+        email: 'contact@web3ix.com',
+        website: 'https://web3ix.com',
       },
     ],
   }
