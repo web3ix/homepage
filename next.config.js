@@ -30,6 +30,7 @@ const nextConfig = {
       },
     ],
     formats: ['image/avif', 'image/webp'],
+    unoptimized: true,
   },
   // add @import 'styles/_functions'; to all scss files.
   sassOptions: {

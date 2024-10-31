@@ -4,8 +4,8 @@
   position: fixed;
   top: 0;
   right: 0;
-  max-height: 100vh;
-  min-height: 100vh;
+  max-height: 100dvh;
+  min-height: 100dvh;
   background-color: var(--black);
   z-index: 3;
   transition: transform 1s var(--ease-out-expo);

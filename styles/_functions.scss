@@ -19,7 +19,7 @@
 }
 
 @function mobile-vh($pixels, $base-vh: $mobile-height) {
-  @return math.div($pixels * 100vh, $base-vh);
+  @return math.div($pixels * 100dvh, $base-vh);
 }
 
 @function desktop-vw($pixels, $base-vw: $desktop-width) {
@@ -27,7 +27,7 @@
 }
 
 @function desktop-vh($pixels, $base-vh: $desktop-height) {
-  @return math.div($pixels * 100vh, $base-vh);
+  @return math.div($pixels * 100dvh, $base-vh);
 }
 
 @function columns($columns) {

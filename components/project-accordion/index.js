@@ -18,7 +18,12 @@ export const ProjectAccordion = ({ data }) => {
     <div className={s.accordion}>
       <p className="p text-bold text-uppercase text-muted">Projects</p>
 
-      <Accordion.Root type="single" className={s['accordion-root']} collapsible>
+      <Accordion.Root
+        type="single"
+        className={s['accordion-root']}
+        collapsible
+        defaultValue={slugify(data[0].name)}
+      >
         {data.map((item, i) => (
           <Accordion.Item value={slugify(item.name)} key={i} className={s.item}>
             <Accordion.Header asChild>
@@ -74,9 +79,9 @@ export const ProjectAccordion = ({ data }) => {
                 </Link>
               )}
               {item.description && (
-                <p className={cn(s.description, 'p')}>
+                <div className={cn(s.description, 'p')}>
                   {renderer(item.description)}
-                </p>
+                </div>
               )}
               {item.testimonial && (
                 <div className={s.testimonial}>
@@ -88,7 +93,7 @@ export const ProjectAccordion = ({ data }) => {
                   >
                     Testimonial
                   </p>
-                  <p className="p">{item.testimonial}</p>
+                  <div className="p">{item.testimonial}</div>
                 </div>
               )}
 
