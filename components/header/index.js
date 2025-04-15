@@ -3,18 +3,16 @@ import { useMediaQuery } from '@studio-freight/hamo'
 import va from '@vercel/analytics'
 import cn from 'clsx'
 import { ContactForm } from 'components/header/contact-form'
-import { Separator } from 'components/separator'
 import { pad } from 'lib/maths'
 import { useStore } from 'lib/store'
-import dynamic from 'next/dynamic'
 import s from './header.module.scss'
 
-const Web3ixLogo = dynamic(() => import('icons/web3ix-logo.svg'), {
-  ssr: false,
-})
-const Web3ixLogoMobile = dynamic(() => import('icons/web3ix-logo-mobile.svg'), {
-  ssr: false,
-})
+// const Web3ixLogo = dynamic(() => import('icons/web3ix-logo.svg'), {
+//   ssr: false,
+// })
+// const Web3ixLogoMobile = dynamic(() => import('icons/web3ix-logo-mobile.svg'), {
+//   ssr: false,
+// })
 // const Stard = dynamic(() => import('icons/stard.svg'), { ssr: false })
 // const Monogram = dynamic(() => import('icons/sf-monogram.svg'), { ssr: false })
 // const StarDuotone = dynamic(() => import('icons/star-duotone.svg'), {
@@ -85,7 +83,7 @@ export const Header = ({ principles = [], contact }) => {
           Contact
         </button>
       </div>
-      <Separator />
+      {/* <Separator />
       <div className={cn(s.header, 'layout-grid')}>
         {isMobile === true ? (
           <Web3ixLogoMobile className={s.title} />
@@ -93,7 +91,7 @@ export const Header = ({ principles = [], contact }) => {
           <Web3ixLogo className={s.title} />
         )}
       </div>
-      <Separator />
+      <Separator /> */}
 
       {isMobile === true && (
         <Marquee className={s.marquee} duration={20}>
