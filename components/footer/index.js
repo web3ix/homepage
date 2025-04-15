@@ -1,4 +1,4 @@
-import { Image, Link } from '@studio-freight/compono'
+import { Link } from '@studio-freight/compono'
 import { useMediaQuery } from '@studio-freight/hamo'
 import va from '@vercel/analytics'
 import cn from 'clsx'
@@ -60,7 +60,7 @@ export function Footer({ className, style, links, studioInfo }) {
               </li>
             </ul>
             <ul className={s.column}>
-              {links.slice(0, 3).map((link, i) => (
+              {links.slice(0, 2).map((link, i) => (
                 <li key={i}>
                   <Link className="p-s decorate" href={link.url}>
                     {link.text}
@@ -69,7 +69,7 @@ export function Footer({ className, style, links, studioInfo }) {
               ))}
             </ul>
             <ul className={s.column}>
-              {links.slice(3, 6).map((link, i) => (
+              {links.slice(2, 4).map((link, i) => (
                 <li key={i}>
                   <Link className="p-s decorate" href={link.url}>
                     {link.text}
@@ -81,11 +81,11 @@ export function Footer({ className, style, links, studioInfo }) {
         )}
 
         <ul className={s.column}>
-          <li>
+          {/* <li>
             <Link className="p-s decorate" href={`tel:${studioInfo.phone}`}>
               P: {studioInfo.phone}
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link className="p-s decorate" href={`mailto:${studioInfo.email}`}>
               E: {studioInfo.email}
@@ -102,7 +102,7 @@ export function Footer({ className, style, links, studioInfo }) {
         )}
       </div>
 
-      {isMobile === true && (
+      {/* {isMobile === true && (
         <section className={s['footer-image']}>
           <Image
             src="/mobile-temp-images/footer.png"
@@ -111,7 +111,7 @@ export function Footer({ className, style, links, studioInfo }) {
             className={s.image}
           />
         </section>
-      )}
+      )} */}
     </footer>
   )
 }

@@ -3,9 +3,9 @@
   position: relative;
 
   .top {
-    align-items: center;
-    padding-top: mobile-vw(16px);
-    padding-bottom: mobile-vw(24px);
+    // align-items: center;
+    // padding-top: mobile-vw(16px);
+    // padding-bottom: mobile-vw(24px);
 
     @include desktop {
       padding-top: desktop-vw(16px);
@@ -57,7 +57,7 @@
   }
 
   .marquee {
-    grid-column: 5/8;
+    grid-column: 1/5;
     color: var(--grey);
     text-transform: uppercase;
 

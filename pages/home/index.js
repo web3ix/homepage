@@ -15,7 +15,7 @@ import {
 } from 'contentful/queries/home.graphql'
 import { renderer } from 'contentful/renderer'
 import { Layout } from 'layouts/default'
-import { getForm } from 'lib/hubspot'
+// import { getForm } from 'lib/hubspot'
 import { slugify } from 'lib/slugify'
 import { useStore } from 'lib/store'
 import dynamic from 'next/dynamic'
@@ -295,7 +295,7 @@ export async function getStaticProps({ preview = false }) {
       }),
     ])
 
-  contact.form = await getForm(contact.form)
+  // contact.form = await getForm(contact.form)
 
   return {
     props: {
