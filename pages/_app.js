@@ -35,12 +35,12 @@ if (typeof window !== 'undefined') {
 
   window.CREDIT_ME = {
     id: location.hostname,
-    url: 'https://web3ix.com',
+    url: 'https://sylas.tech',
     credits: [
       {
-        name: 'Web3ix',
-        email: 'contact@web3ix.com',
-        website: 'https://web3ix.com',
+        name: 'Sylas',
+        email: 'contact@sylas.tech',
+        website: 'https://sylas.tech',
       },
     ],
   }

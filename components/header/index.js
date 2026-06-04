@@ -7,12 +7,15 @@ import { pad } from 'lib/maths'
 import dynamic from 'next/dynamic'
 import s from './header.module.scss'
 
-const Web3ixLogo = dynamic(() => import('icons/web3ix-logo.svg'), {
+const SylasLogo = dynamic(() => import('icons/sylasdottech-logo.svg'), {
   ssr: false,
 })
-const Web3ixLogoMobile = dynamic(() => import('icons/web3ix-logo-mobile.svg'), {
-  ssr: false,
-})
+// const SylasLogoMobile = dynamic(
+//   () => import('icons/sylasdottech-logo-mobile.svg'),
+//   {
+//     ssr: false,
+//   },
+// )
 // const Stard = dynamic(() => import('icons/stard.svg'), { ssr: false })
 // const Monogram = dynamic(() => import('icons/sf-monogram.svg'), { ssr: false })
 // const StarDuotone = dynamic(() => import('icons/star-duotone.svg'), {
@@ -57,11 +60,7 @@ export const Header = ({
       </div>
       <Separator />
       <div className={cn(s.header, 'layout-grid')}>
-        {isMobile === true ? (
-          <Web3ixLogoMobile className={s.title} />
-        ) : (
-          <Web3ixLogo className={s.title} />
-        )}
+        <SylasLogo className={s.title} />
       </div>
       <Separator />
 

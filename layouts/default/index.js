@@ -15,11 +15,11 @@ const Orchestra = dynamic(
 
 export function Layout({
   seo = {
-    title: 'Web3ix Labs - Build on Principle',
-    description: 'Web3ix is an independent blockchain lab built on principle.',
-    image: { url: 'https://web3ix.com/sf-og.jpg' },
+    title: 'Sylas - Build on Principle',
+    description: 'Sylas is an independent blockchain lab built on principle.',
+    image: { url: 'https://sylas.tech/sf-og.jpg' },
     keywords: [
-      'web3ix',
+      'sylasdottech',
       'blockchain',
       'web3',
       'dapps',
@@ -55,9 +55,9 @@ export function Layout({
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'WebSite',
-            name: 'Web3ix Labs',
-            alternateName: ['Web3ix'],
-            url: 'https://web3ix.com/',
+            name: 'Sylas Tech',
+            alternateName: ['Sylas'],
+            url: 'https://sylas.tech/',
           }),
         }}
       />

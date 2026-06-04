@@ -7,7 +7,7 @@ export function CustomHead({
   image,
   keywords,
   theme = { mask: '#ff00ff', tile: '#ff00ff', color: '#ff00ff' },
-  twitter = { handle: '@web3ix' },
+  twitter = { handle: '@sylasdottech' },
 }) {
   return (
     <>
@@ -35,7 +35,7 @@ export function CustomHead({
           name="keywords"
           content={keywords && keywords.length ? keywords.join(',') : keywords}
         />
-        <meta name="author" content="Web3ix" />
+        <meta name="author" content="Sylas" />
         <meta name="referrer" content="no-referrer" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="geo.region" content="US" />
@@ -70,7 +70,7 @@ export function CustomHead({
         <link rel="icon" href="/favicon.ico" />
         {/* END FAVICON */}
 
-        <link rel="canonical" href="https://web3ix.com" />
+        <link rel="canonical" href="https://sylas.tech" />
 
         <title>{title}</title>
       </NextHead>
